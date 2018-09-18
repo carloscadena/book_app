@@ -8,13 +8,11 @@
     <link rel="stylesheet" type="text/css" href="main.css" />
 </head>
 <body>
-    <header>Hello im here.</header>
-    <section>
-        <div>
-            <h1>First Thing</h1>
-        </div>
-    </section>
-    <footer></footer>
+    <h1>books</h1>
+    <% books.forEach( book => {  %>
+        <li class=""><%= book.title %> - <%= book.author %> - <img src="<%= book.image_url %>" alt=""></li>
+      <% }) %>
+      <p>Total books in DB: <%= books.length %></p>
 </body>
 
 </html>

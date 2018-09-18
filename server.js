@@ -30,9 +30,18 @@ app.get('/books', (request, response) => {
   client.query('SELECT * FROM books;')
     .then( (result) => {
       response.render('index', {
-        title: result.rows
+        books: result.rows
       })
     })
+})
+
+app.get('*', (request, response) => {
+  response.statusCode = 404
+  console.log(response.statusCode)
+  response.render('error', {
+    error: '404 - Wrong path'
+  })
+      
 })
 
 app.listen(PORT, () => {
