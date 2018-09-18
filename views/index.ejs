@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>SAY HELLO</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="/styles/style.css" />
+</head>
+<body>
+    <h1>books</h1>
+    <% books.forEach( book => {  %>
+        <li class=""><%= book.title %> - <%= book.author %> - <img src="<%= book.image_url %>" alt=""></li>
+      <% }) %>
+      <p>Total books in DB: <%= books.length %></p>
+</body>
+
+</html>
