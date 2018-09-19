@@ -3,10 +3,11 @@
         <%- include('partials/head'); %>
 <body>
     <%- include('partials/header'); %>
+    <p>(<%= books.length %> to be exact)</p>
     <% books.forEach( book => {  %>
-        <li class=""><a href="books/<%= book.id %>"><%= book.title %> - <%= book.author %> <img src="<%= book.image_url %>" alt=""></a></li>
+        <li class="book-li"><a href="books/<%= book.id %>"><%= book.title %> - <%= book.author %> <img src="<%= book.image_url %>" alt=""></a></li>
       <% }) %>
-      <p>Total books in DB: <%= books.length %></p>
+      
 </body>
 
 </html>
