@@ -10,7 +10,7 @@
 <body>
     <h1>books</h1>
     <% books.forEach( book => {  %>
-        <li class=""><%= book.title %> - <%= book.author %> - <img src="<%= book.image_url %>" alt=""></li>
+        <li class=""><a href="books/<%= book.id %>"><%= book.title %> - <%= book.author %> <img src="<%= book.image_url %>" alt=""></a></li>
       <% }) %>
       <p>Total books in DB: <%= books.length %></p>
 </body>
