@@ -23,7 +23,7 @@ app.use(express.static('./public'));
 app.set('view engine', 'ejs');
 
 app.get('/hello', (request, response) => {
-  response.render('index.ejs', {root: './public'});
+  response.render('hello.ejs', {root: './public'});
 });
 
 app.get('/books', (request, response) => {
