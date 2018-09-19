@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>A Book</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <%- include('partials/head'); %>
+
  
 </head>
 <body>
-   <a href="/books"> <h1>Book Library</h1></a>
+  <%- include('partials/header'); %>
+   
   <h2><%= book.title %></h2>
   <img src="<%= book.image_url %>" alt="">
   <p><%= book.description %></p>
