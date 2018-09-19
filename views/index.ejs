@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="/styles/style.css" />
 </head>
 <body>
-    <h1>books</h1>
+    <h1>Book Library</h1>
     <% books.forEach( book => {  %>
         <li class=""><a href="books/<%= book.id %>"><%= book.title %> - <%= book.author %> <img src="<%= book.image_url %>" alt=""></a></li>
       <% }) %>

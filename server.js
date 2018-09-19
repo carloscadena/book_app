@@ -43,7 +43,7 @@ app.get('/books/:id', (request, response) =>{
       console.log(err);
       response.redirect('/error');
     } else {
-      response.render('oneBook', {book: result.rows[0]});
+      response.render('show', {book: result.rows[0]});
     }
   })
 })
@@ -54,7 +54,7 @@ app.get('*', (request, response) => {
   response.render('error', {
     error: '404 - Wrong path'
   })
-      
+
 })
 
 app.listen(PORT, () => {
