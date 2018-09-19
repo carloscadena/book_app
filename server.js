@@ -35,6 +35,19 @@ app.get('/books', (request, response) => {
     })
 })
 
+app.get('/books/:id', (request, response) =>{
+  let SQL = 'SELECT * FROM books WHERE id = $1';
+  let values = [ request.params.id ]
+  client.query(SQL, values, (err, result) => {
+    if(err){
+      console.log(err);
+      response.redirect('/error');
+    } else {
+      response.render('oneBook', {book: result.rows[0]});
+    }
+  })
+})
+
 app.get('*', (request, response) => {
   response.statusCode = 404
   console.log(response.statusCode)
