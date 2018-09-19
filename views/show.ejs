@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <%- include('partials/head'); %>
+
+ 
+</head>
+<body>
+  <%- include('partials/header'); %>
+  <div id="one-book">
+      <h3><%= book.title %></h3>
+      <img src="<%= book.image_url %>" alt="">
+      <p>isbn: <%= book.isbn %></p>
+      <p><%= book.description %></p>
+
+  </div>
+</body>
+</html>

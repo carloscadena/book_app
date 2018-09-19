@@ -1,18 +1,13 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>SAY HELLO</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="/styles/style.css" />
-</head>
+        <%- include('partials/head'); %>
 <body>
-    <h1>books</h1>
+    <%- include('partials/header'); %>
+    <p>(<%= books.length %> to be exact)</p>
     <% books.forEach( book => {  %>
-        <li class=""><%= book.title %> - <%= book.author %> - <img src="<%= book.image_url %>" alt=""></li>
+        <li class="book-li"><a href="books/<%= book.id %>"><%= book.title %> - <%= book.author %> <img src="<%= book.image_url %>" alt=""></a></li>
       <% }) %>
-      <p>Total books in DB: <%= books.length %></p>
+      
 </body>
 
 </html>
