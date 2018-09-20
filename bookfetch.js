@@ -33,7 +33,6 @@ function getBooks(request, response){
 
 function addNewBook(request, response){
   let SQL = 'INSERT INTO books (author, title, isbn, image_url, description) VALUES ($1, $2, $3, $4, $5) RETURNING id;'
-  console.log(request.body);
   let values = [
     request.body.author,
     request.body.title,
@@ -41,7 +40,6 @@ function addNewBook(request, response){
     request.body.image_url,
     request.body.description
   ];
-  console.log(typeof request.body.image_url)
   client.query(SQL, values, (err, result) => {
     response.redirect(`/books/${result.rows[0].id}`)
   })
