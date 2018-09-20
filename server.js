@@ -30,6 +30,10 @@ app.get('*', (request, response) => {
   })
 })
 
+app.get('/books/addbook', (request, response) => {
+  response.render('newBook');
+});
+
 app.post('/books', bookfetch.addNewBook);
 
 app.listen(PORT, () => {
