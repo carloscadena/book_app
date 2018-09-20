@@ -28,8 +28,9 @@ app.get('*', (request, response) => {
   response.render('error', {
     error: '404 - Wrong path'
   })
-
 })
+
+app.post('/books', bookfetch.addNewBook);
 
 app.listen(PORT, () => {
   console.log(`listening on port ${PORT}!`);

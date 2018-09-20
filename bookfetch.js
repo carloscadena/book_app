@@ -46,5 +46,6 @@ function addNewBook(request, response){
 
 module.exports = {
   getBooks: getBooks,
-  getOneBook: getOneBook
+  getOneBook: getOneBook,
+  addNewBook: addNewBook
 };
