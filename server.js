@@ -20,6 +20,10 @@ app.get('/hello', (request, response) => {
 
 app.get('/books', bookfetch.getBooks);
 
+app.get('/books/addbook', (request, response) => {
+  response.render('newBook');
+});
+
 app.get('/books/:id', bookfetch.getOneBook);
 
 app.get('*', (request, response) => {
@@ -30,9 +34,6 @@ app.get('*', (request, response) => {
   })
 })
 
-app.get('/books/addbook', (request, response) => {
-  response.render('newBook');
-});
 
 app.post('/books', bookfetch.addNewBook);
 
