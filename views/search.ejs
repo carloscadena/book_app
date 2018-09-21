@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+        <%- include('partials/head'); %>
+<body>
+    <%- include('partials/header'); %>
+    <p>(<%= books.length %> to be exact)</p>
+    <% books.forEach( book => {  %>
+        <li class="book-li">
+          <%= book.volumeInfo.title %> - <%= book.volumeInfo.authors[0]%>
+          <img src="<%= book.volumeInfo.imageLinks.smallThumbnail %>" alt="">
+        </li>
+      <% }) %>
+      
+</body>
+
+</html>
