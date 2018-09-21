@@ -40,8 +40,10 @@ function addNewBook(request, response){
     request.body.image_url,
     request.body.description
   ];
+  console.log(values)
   client.query(SQL, values, (err, result) => {
-    response.redirect(`/books/${result.rows[0].id}`)
+    console.log(result)
+    response.redirect(`/books/${result.rows[0].id}`);
   })
 }
 

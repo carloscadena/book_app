@@ -27,12 +27,15 @@ app.get('/books/addbook', (request, response) => {
 });
 
 app.get('/books/search', (request, response) => {
-  console.log(request.query.searchforbook)
   superagent.get(`https://www.googleapis.com/books/v1/volumes?q=${request.query.searchforbook}`)
     .end( (err, apiResponse) => {
-      console.log(apiResponse.body.items[0].volumeInfo.title)
-      let books = apiResponse.body.items
-      console.log(books)
+      let books = apiResponse.body.items.map(book => ({
+        author: book.volumeInfo.authors[0],
+        title: book.volumeInfo.title,
+        isbn: book.volumeInfo.industryIdentifiers[0].identifier,
+        image_url: book.volumeInfo.imageLinks.smallThumbnail,
+        description: book.volumeInfo.description
+      }))
       response.render('search', {books: books})
     })
 })
