@@ -20,6 +20,10 @@ app.get('/hello', (request, response) => {
 
 app.get('/books', bookfetch.getBooks);
 
+app.get('/books/addbook', (request, response) => {
+  response.render('newBook');
+});
+
 app.get('/books/:id', bookfetch.getOneBook);
 
 app.get('*', (request, response) => {
@@ -28,8 +32,10 @@ app.get('*', (request, response) => {
   response.render('error', {
     error: '404 - Wrong path'
   })
-
 })
+
+
+app.post('/books', bookfetch.addNewBook);
 
 app.listen(PORT, () => {
   console.log(`listening on port ${PORT}!`);
